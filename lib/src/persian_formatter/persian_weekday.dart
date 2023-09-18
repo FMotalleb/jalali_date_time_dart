@@ -1,3 +1,7 @@
+/// The PersianWeekday enum represents the weekdays of the Persian (Solar Hijri)
+/// calendar. Each weekday is associated with its Persian name,
+/// corresponding weekday index (0-6), and corresponding Persian weekday index
+/// (1-7).
 enum PersianWeekday {
   shanbe(
     persianName: 'شنبه',
@@ -41,6 +45,9 @@ enum PersianWeekday {
     required this.weekDayIndex,
     required this.persianWeekDayIndex,
   });
+
+  /// Get weekday by original index (1-7) where (1=monday`doShanbe`)
+  /// till (7=sunday`yekShanbe`)
   factory PersianWeekday.byWeekday(int weekDay) {
     assert(
       weekDay > 0 && weekDay <= 7,
@@ -50,6 +57,9 @@ enum PersianWeekday {
       (element) => element.weekDayIndex == weekDay,
     );
   }
+
+  /// Get weekday by persian index (1-7) where (1=saturday`shanbe`)
+  /// till (7=friday`jome`)
   factory PersianWeekday.byPersianWeekDay(int weekDay) {
     assert(
       weekDay > 0 && weekDay <= 7,
@@ -60,7 +70,12 @@ enum PersianWeekday {
     );
   }
 
+  /// Name of the weekday (Fa)
   final String persianName;
+
+  /// Original index (1-7) where (1=monday`doShanbe`) till (7=sunday`yekShanbe`)
   final int weekDayIndex;
+
+  /// Persian index (1-7) where (1=saturday`shanbe`) till (7=friday`jome`)
   final int persianWeekDayIndex;
 }

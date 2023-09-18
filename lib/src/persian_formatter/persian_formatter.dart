@@ -89,7 +89,7 @@ class PersianFormatter {
   PersianFormatter.jm() : this('jm');
   PersianFormatter.jms() : this('jms');
 
-  List<String> _format = [];
+  final List<String> _format;
   PersianFormatter addPattern(String addition) => PersianFormatter._(
         [
           ..._format,
