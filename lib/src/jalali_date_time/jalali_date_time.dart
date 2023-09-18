@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 
-import '../../global_date_time.dart';
+import '../../jalali_date_time.dart';
 
 /// JalaliDateTime is just a wrapper around DateTime provided by dart
 ///
@@ -11,6 +11,14 @@ import '../../global_date_time.dart';
 ///
 /// this class uses 4 internal allocations for year,month,day and
 /// source DateTime
+///
+/// keep in mind every method in this class calls the equivalent method from
+/// [DateTime] and then converts that to JalaliDateTime so its not efficient
+/// but stable
+///
+/// you may consider using [toDateTime] method then do your work with date time
+/// and then use [JalaliDateTime.fromDateTime] to convert it back to
+/// [JalaliDateTime] to reduce load
 @immutable
 final class JalaliDateTime extends GlobalDateInformation //
     implements
