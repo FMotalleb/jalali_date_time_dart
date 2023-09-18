@@ -1,3 +1,7 @@
+## 1.1.0
+
+- (Feat) Persian DateTime formatter
+
 ## 1.0.3
 
 - (Feat) DateTime to JalaliDateTime extension
