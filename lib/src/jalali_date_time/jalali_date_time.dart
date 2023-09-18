@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:meta/meta.dart';
 
 import '../../jalali_date_time.dart';

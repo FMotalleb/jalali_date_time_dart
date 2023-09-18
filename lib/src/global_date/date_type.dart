@@ -10,8 +10,8 @@ typedef DateMapper = GlobalDateInformation Function(
   DateType target,
 );
 
-/// Jalali calendar `https://en.wikipedia.org/wiki/Jalali_calendar`
 enum DateType {
+  /// Jalali calendar `https://en.wikipedia.org/wiki/Jalali_calendar`
   jalali(
     builder: GlobalDateInformation.fromJalali,
     mapper: _jalaliMapper,
