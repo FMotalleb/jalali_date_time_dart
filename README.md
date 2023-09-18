@@ -44,12 +44,13 @@ void main() {
 
   // Perform DateTime operations
   final tomorrow = dateTime.add(const Duration(days: 1));
-  final tyear = tomorrow.year;
-  final tmonth = tomorrow.month;
-  final tday = tomorrow.day;
-  print('tomorrow: $tyear-$tmonth-$tday');
+
   // Convert DateTime back to JalaliDateTime
-  final jalaliTomorrow = JalaliDateTime.fromDateTime(tomorrow);
+  final jalaliTomorrow = JalaliDateTime.fromDateTime(tomorrow);  
+  final tyear = jalaliTomorrow.year;
+  final tmonth = jalaliTomorrow.month;
+  final tday = jalaliTomorrow.day;
+  print('tomorrow: $tyear-$tmonth-$tday');
 
   // Compare JalaliDateTime objects
   if (jalaliTomorrow.isAfter(jalaliNow)) {
