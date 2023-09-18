@@ -352,6 +352,26 @@ final class JalaliDateTime extends GlobalDateInformation //
   /// ```
   int get weekday => _source.weekday;
 
+  /// The day of the week [PersianWeekday.shanbe]..[PersianWeekday.jome].
+  ///
+  /// In accordance with ISO 8601
+  /// a week starts with Monday, which has the value 1.
+  ///
+  /// ```dart
+  /// final moonLanding = JalaliDateTime.fromDateTime(
+  ///     DateTime.parse('1969-07-20 20:18:04Z'),
+  ///   );
+  /// print(moonLanding.weekday); // 7
+  /// print(moonLanding.jalaliWeekday.persianWeekday); // 2
+  /// assert(moonLanding.weekday == DateTime.sunday);
+  /// assert(moonLanding.jalaliWeekday == PersianWeekday.yekShanbe);
+  /// ```
+  PersianWeekday get jalaliWeekday => //
+      PersianWeekday.byWeekday(weekday);
+
+  /// Represents the [PersianMonth] value within the [year].
+  PersianMonth get persianMonth => PersianMonth.fromMonthIndex(month);
+
   /// The time zone name.
   ///
   /// This value is provided by the operating system and may be an
@@ -639,6 +659,10 @@ final class JalaliDateTime extends GlobalDateInformation //
 
   @override
   String toString() {
-    return 'JalaliDateTime($year,$month,$day,$hour,$minute,$second)';
+    return PersianFormatter.yMd() //
+        .addPattern(' ')
+        .add_Hms()
+        .addPattern(' $timeZoneName')
+        .format(this);
   }
 }

@@ -56,7 +56,9 @@ void main() {
   if (jalaliTomorrow.isAfter(jalaliNow)) {
     print('Tomorrow is after today.'); // Tomorrow is after today.
   }
-  print(DateTime(1986, 4, 26, 01, 23, 40).toJalali()); // JalaliDateTime(1365,2,6,1,23,40)
+  print(DateTime(1986, 4, 26, 01, 23, 40).toJalali()); // 1365-02-06 01:23:40 +0330
+
+  print(PersianFormatter.yMMMMEEEEd().format(jalaliTomorrow)); // سه‌شنبه, 1402-شهریور-28
 }
 ```
 
