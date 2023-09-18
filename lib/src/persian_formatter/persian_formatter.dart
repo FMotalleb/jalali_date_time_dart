@@ -89,6 +89,33 @@ class PersianFormatter {
   PersianFormatter.jm() : this('jm');
   PersianFormatter.jms() : this('jms');
 
+  static List<String> formatParser(String format) {
+    if (format.isEmpty) {
+      return [];
+    }
+    String currentMatch = '';
+    for (final i in _possibleFormats) {
+      if (format.startsWith(i)) {
+        if (currentMatch.length < i.length) {
+          currentMatch = i;
+        }
+      }
+    }
+    if (currentMatch.isEmpty) {
+      final char = format[0];
+      final newFormat = format.replaceRange(0, 1, '');
+      return [
+        char,
+        ...formatParser(newFormat),
+      ];
+    }
+    final newFormat = format.replaceRange(0, currentMatch.length, '');
+    return [
+      currentMatch,
+      ...formatParser(newFormat),
+    ];
+  }
+
   final List<String> _format;
   PersianFormatter addPattern(String addition) => PersianFormatter._(
         [
@@ -188,6 +215,50 @@ class PersianFormatter {
       _ => (_) => format,
     };
   }
+
+  static const _possibleFormats = [
+    'd',
+    'E',
+    'EEEE',
+    'LLL',
+    'LLLL',
+    'MMM',
+    'MMMM',
+    'M',
+    'MM',
+    'dd',
+    'Md',
+    'MEd',
+    'MMMd',
+    'MMMMd',
+    'MMMEd',
+    'MMMMEEEEd',
+    'QQQ',
+    'QQQQ',
+    'y',
+    'yM',
+    'yMd',
+    'yMEd',
+    'yMMM',
+    'yMMMd',
+    'yMMMEd',
+    'yMMMM',
+    'yMMMMd',
+    'yMMMMEEEEd',
+    'H',
+    'm',
+    's',
+    'Hm',
+    'Hms',
+    'j',
+    'jm',
+    'jms',
+    'jmv',
+    'jmz',
+    'jv',
+    'jz',
+    'ms',
+  ];
   /*
 
 

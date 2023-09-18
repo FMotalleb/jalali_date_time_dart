@@ -30,4 +30,5 @@ void main() {
   print(DateTime(1986, 4, 26, 01, 23, 40).toJalali()); // 1365-02-06 01:23:40 +0330
 
   print(PersianFormatter.yMMMMEEEEd().format(jalaliTomorrow)); // سه‌شنبه, 1402-شهریور-28
+  print(PersianFormatter.formatParser('dd-MM-hkffftT'));
 }
