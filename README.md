@@ -16,7 +16,7 @@ To use JalaliDateTime in your Dart project, add it as a dependency in your `pubs
 
 ```yaml
 dependencies:
-  jalali_date_time: ^1.0.0
+  jalali_date_time: ^1.0.2
 ```
 
 Then, run `flutter pub get` to fetch the package.
