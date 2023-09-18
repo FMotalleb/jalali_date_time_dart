@@ -10,6 +10,7 @@ typedef DateMapper = GlobalDateInformation Function(
   DateType target,
 );
 
+/// Jalali calendar `https://en.wikipedia.org/wiki/Jalali_calendar`
 enum DateType {
   jalali(
     builder: GlobalDateInformation.fromJalali,
@@ -29,7 +30,10 @@ enum DateType {
   final DateMapper mapper;
 }
 
-GlobalDateInformation _jalaliMapper(GlobalDateInformation date, DateType target) {
+GlobalDateInformation _jalaliMapper(
+  GlobalDateInformation date,
+  DateType target,
+) {
   assert(
     date.dateType == DateType.jalali,
     'conversion from jalali applied on none jalali date',
@@ -40,7 +44,10 @@ GlobalDateInformation _jalaliMapper(GlobalDateInformation date, DateType target)
   };
 }
 
-GlobalDateInformation _gregorianMapper(GlobalDateInformation date, DateType target) {
+GlobalDateInformation _gregorianMapper(
+  GlobalDateInformation date,
+  DateType target,
+) {
   assert(
     date.dateType == DateType.gregorian,
     'conversion from gregorian applied on none gregorian date',

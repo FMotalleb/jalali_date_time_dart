@@ -1,7 +1,10 @@
+import 'package:meta/meta.dart';
+
 import 'date_type.dart';
 
+@immutable
 class GlobalDateInformation {
-  GlobalDateInformation({
+  const GlobalDateInformation({
     required this.year,
     required this.month,
     required this.day,
@@ -29,13 +32,19 @@ class GlobalDateInformation {
         day: day,
         dateType: DateType.gregorian,
       );
-  factory GlobalDateInformation.fromDateTime(DateTime dt) => GlobalDateInformation(
+  factory GlobalDateInformation.fromDateTime(DateTime dt) => //
+      GlobalDateInformation(
         year: dt.year,
         month: dt.month,
         day: dt.day,
       );
 
-  factory GlobalDateInformation.gregorianToJalaliDate(GlobalDateInformation gregorian) {
+  /// Implementation of conversion from gregorian to jalali
+  ///
+  /// Special Tanks to `https://jdf.scr.ir/` for providing the conversion code
+  factory GlobalDateInformation.gregorianToJalaliDate(
+    GlobalDateInformation gregorian,
+  ) {
     int jm;
     int jd;
     final gdm = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
@@ -65,7 +74,12 @@ class GlobalDateInformation {
     return GlobalDateInformation.fromJalali(jy, jm, jd);
   }
 
-  factory GlobalDateInformation.jalaliToGregorian(GlobalDateInformation jalali) {
+  /// Implementation of conversion from jalali to gregorian
+  ///
+  /// Special Tanks to `https://jdf.scr.ir/` for providing the conversion code
+  factory GlobalDateInformation.jalaliToGregorian(
+    GlobalDateInformation jalali,
+  ) {
     int gy;
     int gm;
     int gd;
@@ -76,7 +90,10 @@ class GlobalDateInformation {
         ((jy ~/ 33) * 8) +
         (((jy % 33) + 3) ~/ 4) +
         jalali.day +
-        ((jalali.month < 7) ? (jalali.month - 1) * 31 : ((jalali.month - 7) * 30) + 186);
+        ((jalali.month < 7)
+            ? //
+            (jalali.month - 1) * 31
+            : ((jalali.month - 7) * 30) + 186);
     gy = 400 * (days ~/ 146097);
     days %= 146097;
     if (days > 36524) {
@@ -106,7 +123,7 @@ class GlobalDateInformation {
       30,
       31,
       30,
-      31
+      31,
     ];
     for (gm = 0; gm < 13 && gd > salA[gm]; gm++) {
       gd -= salA[gm];
