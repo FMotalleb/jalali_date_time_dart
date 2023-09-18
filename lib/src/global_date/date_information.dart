@@ -1,15 +1,43 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:meta/meta.dart';
 
 import 'date_type.dart';
 
+/// Holds information of three integer values representing year, month, and day,
+/// along with an enum value of type [DateType] indicating the type of
+/// this date model.
 @immutable
 class GlobalDateInformation {
+  /// Represents a date with year, month, and day values.
+  ///
+  /// The [year], [month], [day] and [dateType] parameters are required to create a
+  /// [GlobalDateInformation] object.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final dateInfo = GlobalDateInformation(
+  ///   year: 1400,
+  ///   month: 9,
+  ///   day: 18,
+  ///   dateType: DateType.jalali,
+  /// );
+  /// ```
   const GlobalDateInformation({
     required this.year,
     required this.month,
     required this.day,
-    this.dateType = DateType.gregorian,
+    required this.dateType,
   });
+
+  /// Constructs a new [GlobalDateInformation] for the type [DateType.jalali].
+  ///
+  /// Requires a year value. Month and day values default to 1.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final dateInfo = GlobalDateInformation.fromJalali(1400);
+  /// ```
   factory GlobalDateInformation.fromJalali(
     int year, [
     int month = 1,
@@ -21,6 +49,15 @@ class GlobalDateInformation {
         day: day,
         dateType: DateType.jalali,
       );
+
+  /// Constructs a new [GlobalDateInformation] for the type [DateType.gregorian].
+  ///
+  /// Requires a year value. Month and day values default to 1.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final dateInfo = GlobalDateInformation.fromGregorian(2020);
+  /// ```
   factory GlobalDateInformation.fromGregorian(
     int year, [
     int month = 1,
@@ -32,16 +69,24 @@ class GlobalDateInformation {
         day: day,
         dateType: DateType.gregorian,
       );
+
+  /// Constructs a new [GlobalDateInformation] from a [DateTime] object.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final dateTime = DateTime(2023, 9, 18);
+  /// final dateInfo = GlobalDateInformation.fromDateTime(dateTime);
+  /// ```
   factory GlobalDateInformation.fromDateTime(DateTime dt) => //
-      GlobalDateInformation(
-        year: dt.year,
-        month: dt.month,
-        day: dt.day,
+      GlobalDateInformation.fromGregorian(
+        dt.year,
+        dt.month,
+        dt.day,
       );
 
-  /// Implementation of conversion from gregorian to jalali
+  /// Implementation of conversion from Gregorian to Jalali.
   ///
-  /// Special Tanks to `https://jdf.scr.ir/` for providing the conversion code
+  /// Special thanks to `https://jdf.scr.ir/` for providing the conversion code.
   factory GlobalDateInformation.gregorianToJalaliDate(
     GlobalDateInformation gregorian,
   ) {
@@ -74,9 +119,9 @@ class GlobalDateInformation {
     return GlobalDateInformation.fromJalali(jy, jm, jd);
   }
 
-  /// Implementation of conversion from jalali to gregorian
+  /// Implementation of conversion from Jalali to Gregorian
   ///
-  /// Special Tanks to `https://jdf.scr.ir/` for providing the conversion code
+  /// Special thanks to `https://jdf.scr.ir/` for providing the conversion code.
   factory GlobalDateInformation.jalaliToGregorian(
     GlobalDateInformation jalali,
   ) {
@@ -131,9 +176,16 @@ class GlobalDateInformation {
     return GlobalDateInformation.fromGregorian(gy, gm, gd);
   }
 
+  /// Represents the [year] value
   final int year;
+
+  /// Represents the [month] value within the [year].
   final int month;
+
+  /// Represents the [day] value within the [month].
   final int day;
+
+  /// Represents the type of date (e.g., Gregorian or Jalali) using [DateType].
   final DateType dateType;
 
   @override

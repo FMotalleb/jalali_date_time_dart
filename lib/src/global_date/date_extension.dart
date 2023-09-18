@@ -3,16 +3,18 @@
 import 'date_information.dart';
 import 'date_type.dart';
 
+/// Extension for converting a [GlobalDateInformation] instance between
+/// different formats
 extension DateConverter on GlobalDateInformation {
-  /// converts current instance to Jalali if its not
-  /// if it is returns [this]
+  /// Converts the current instance to Jalali if it's not already Jalali.
+  /// Returns [this] if it's already in Jalali format.
   GlobalDateInformation toJalaliDate() => dateType.mapper(
         this,
         DateType.jalali,
       );
 
-  /// converts current instance to Gregorian if its not
-  /// if it is returns [this]
+  /// Converts the current instance to Gregorian if it's not already Gregorian.
+  /// Returns [this] if it's already in Gregorian format.
   GlobalDateInformation toGregorianDate() => dateType.mapper(
         this,
         DateType.gregorian,
