@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:global_date_time/global_date_time.dart';
+import 'package:jalali_date_time/jalali_date_time.dart';
 
 void main() {
   final berlinWallFell = JalaliDateTime.fromDateTime(
