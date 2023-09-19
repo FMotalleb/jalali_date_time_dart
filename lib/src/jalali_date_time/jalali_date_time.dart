@@ -18,7 +18,7 @@ import '../../jalali_date_time.dart';
 /// from [DateTime] and then converts that to JalaliDateTime, so it's not
 /// the most efficient approach but remains stable.
 ///
-/// You may consider using the [toDateTime] method to perform your operations
+/// You may consider using the [getDateTime] method to perform your operations
 /// with DateTime and then use [JalaliDateTime.fromDateTime] to convert it back
 /// to [JalaliDateTime] when needed to reduce the computational load.
 @immutable
@@ -628,9 +628,9 @@ final class JalaliDateTime extends GlobalDateInformation //
   /// Returns this [JalaliDateTime] value in form of dart's [DateTime].
   ///
   /// ```dart template:expression
-  /// JalaliDateTime.now().toDateTime()
+  /// JalaliDateTime.now().getDateTime()
   /// ```
-  DateTime toDateTime() => _source;
+  DateTime getDateTime() => _source;
 
   @override
   int get hashCode => _source.hashCode ^ year ^ month ^ day;
@@ -659,10 +659,6 @@ final class JalaliDateTime extends GlobalDateInformation //
 
   @override
   String toString() {
-    return PersianFormatter.yMd() //
-        .addPattern(' ')
-        .add_Hms()
-        .addPattern(' $timeZoneName')
-        .format(this);
+    return PersianDateFormat('yMd Hms $timeZoneName').format(this);
   }
 }
