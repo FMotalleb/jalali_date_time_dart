@@ -49,12 +49,12 @@ import '../../jalali_date_time.dart';
 /// SECOND                       s
 
 /// {@template formatter}
-/// The [PersianDateFormat] class is a utility class designed to format dates
+/// The [PersianDateTimeFormat] class is a utility class designed to format dates
 /// and times using the Persian (Jalali) calendar system. It provides various
 /// formatting options for date and time values, allowing you to customize how
 /// date and time information is displayed.
 /// {@endtemplate}
-class PersianDateFormat {
+class PersianDateTimeFormat {
   /// By using this constructor, you can initialize the formatter with a raw
   /// pattern.
   ///
@@ -63,112 +63,112 @@ class PersianDateFormat {
   /// better to directly use this constructor to boost performance.
   ///
   /// {@macro formatter}
-  PersianDateFormat([
+  PersianDateTimeFormat([
     String initialPattern = '',
   ]) : _pattern = _patternParser(initialPattern).toList(growable: false);
-  const PersianDateFormat._(this._pattern);
+  const PersianDateTimeFormat._(this._pattern);
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.d() : this('d');
+  PersianDateTimeFormat.d() : this('d');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.E() : this('E');
+  PersianDateTimeFormat.E() : this('E');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.EEEE() : this('EEEE');
+  PersianDateTimeFormat.EEEE() : this('EEEE');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.LLL() : this('LLL');
+  PersianDateTimeFormat.LLL() : this('LLL');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.LLLL() : this('LLLL');
+  PersianDateTimeFormat.LLLL() : this('LLLL');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.M() : this('M');
+  PersianDateTimeFormat.M() : this('M');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.Md() : this('Md');
+  PersianDateTimeFormat.Md() : this('Md');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MEd() : this('MEd');
+  PersianDateTimeFormat.MEd() : this('MEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMM() : this('MMM');
+  PersianDateTimeFormat.MMM() : this('MMM');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMMd() : this('MMMd');
+  PersianDateTimeFormat.MMMd() : this('MMMd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMMEd() : this('MMMEd');
+  PersianDateTimeFormat.MMMEd() : this('MMMEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMMM() : this('MMMM');
+  PersianDateTimeFormat.MMMM() : this('MMMM');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMMMd() : this('MMMMd');
+  PersianDateTimeFormat.MMMMd() : this('MMMMd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.MMMMEEEEd() : this('MMMMEEEEd');
+  PersianDateTimeFormat.MMMMEEEEd() : this('MMMMEEEEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.QQQ() : this('QQQ');
+  PersianDateTimeFormat.QQQ() : this('QQQ');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.QQQQ() : this('QQQQ');
+  PersianDateTimeFormat.QQQQ() : this('QQQQ');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.y() : this('y');
+  PersianDateTimeFormat.y() : this('y');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yM() : this('yM');
+  PersianDateTimeFormat.yM() : this('yM');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMd() : this('yMd');
+  PersianDateTimeFormat.yMd() : this('yMd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMEd() : this('yMEd');
+  PersianDateTimeFormat.yMEd() : this('yMEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMM() : this('yMMM');
+  PersianDateTimeFormat.yMMM() : this('yMMM');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMMd() : this('yMMMd');
+  PersianDateTimeFormat.yMMMd() : this('yMMMd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMMEd() : this('yMMMEd');
+  PersianDateTimeFormat.yMMMEd() : this('yMMMEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMMM() : this('yMMMM');
+  PersianDateTimeFormat.yMMMM() : this('yMMMM');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMMMd() : this('yMMMMd');
+  PersianDateTimeFormat.yMMMMd() : this('yMMMMd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yMMMMEEEEd() : this('yMMMMEEEEd');
+  PersianDateTimeFormat.yMMMMEEEEd() : this('yMMMMEEEEd');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yQQQ() : this('yQQQ');
+  PersianDateTimeFormat.yQQQ() : this('yQQQ');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.yQQQQ() : this('yQQQQ');
+  PersianDateTimeFormat.yQQQQ() : this('yQQQQ');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.H() : this('H');
+  PersianDateTimeFormat.H() : this('H');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.Hm() : this('Hm');
+  PersianDateTimeFormat.Hm() : this('Hm');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.Hms() : this('Hms');
+  PersianDateTimeFormat.Hms() : this('Hms');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.j() : this('j');
+  PersianDateTimeFormat.j() : this('j');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.jm() : this('jm');
+  PersianDateTimeFormat.jm() : this('jm');
 
   /// Create a PersianDateFormat instance with a predefined pattern
-  PersianDateFormat.jms() : this('jms');
+  PersianDateTimeFormat.jms() : this('jms');
 
   /// Get current pattern in string format
   String get pattern => _pattern.join();
@@ -213,8 +213,8 @@ class PersianDateFormat {
 
   /// Adds new pattern after current pattern and returns new instance
   /// that has '[pattern]+[additionalPattern]' as its pattern
-  PersianDateFormat addPattern(String additionalPattern) => //
-      PersianDateFormat('$pattern$additionalPattern');
+  PersianDateTimeFormat addPattern(String additionalPattern) => //
+      PersianDateTimeFormat('$pattern$additionalPattern');
 
   /// Apply the format on [dateTime] and return result as string
   String format(JalaliDateTime dateTime) => //
@@ -246,109 +246,109 @@ class PersianDateFormat {
   String call(JalaliDateTime dateTime) => format(dateTime);
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_d() => addPattern('d');
+  PersianDateTimeFormat add_d() => addPattern('d');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_E() => addPattern('E');
+  PersianDateTimeFormat add_E() => addPattern('E');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_EEEE() => addPattern('EEEE');
+  PersianDateTimeFormat add_EEEE() => addPattern('EEEE');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_LLL() => addPattern('LLL');
+  PersianDateTimeFormat add_LLL() => addPattern('LLL');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_LLLL() => addPattern('LLLL');
+  PersianDateTimeFormat add_LLLL() => addPattern('LLLL');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_M() => addPattern('M');
+  PersianDateTimeFormat add_M() => addPattern('M');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_m() => addPattern('m');
+  PersianDateTimeFormat add_m() => addPattern('m');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_Md() => addPattern('Md');
+  PersianDateTimeFormat add_Md() => addPattern('Md');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MEd() => addPattern('MEd');
+  PersianDateTimeFormat add_MEd() => addPattern('MEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMM() => addPattern('MMM');
+  PersianDateTimeFormat add_MMM() => addPattern('MMM');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMMd() => addPattern('MMMd');
+  PersianDateTimeFormat add_MMMd() => addPattern('MMMd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMMEd() => addPattern('MMMEd');
+  PersianDateTimeFormat add_MMMEd() => addPattern('MMMEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMMM() => addPattern('MMMM');
+  PersianDateTimeFormat add_MMMM() => addPattern('MMMM');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMMMd() => addPattern('MMMMd');
+  PersianDateTimeFormat add_MMMMd() => addPattern('MMMMd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_MMMMEEEEd() => addPattern('MMMMEEEEd');
+  PersianDateTimeFormat add_MMMMEEEEd() => addPattern('MMMMEEEEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_QQQ() => addPattern('QQQ');
+  PersianDateTimeFormat add_QQQ() => addPattern('QQQ');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_QQQQ() => addPattern('QQQQ');
+  PersianDateTimeFormat add_QQQQ() => addPattern('QQQQ');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_y() => addPattern('y');
+  PersianDateTimeFormat add_y() => addPattern('y');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yM() => addPattern('yM');
+  PersianDateTimeFormat add_yM() => addPattern('yM');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMd() => addPattern('yMd');
+  PersianDateTimeFormat add_yMd() => addPattern('yMd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMEd() => addPattern('yMEd');
+  PersianDateTimeFormat add_yMEd() => addPattern('yMEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMM() => addPattern('yMMM');
+  PersianDateTimeFormat add_yMMM() => addPattern('yMMM');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMMd() => addPattern('yMMMd');
+  PersianDateTimeFormat add_yMMMd() => addPattern('yMMMd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMMEd() => addPattern('yMMMEd');
+  PersianDateTimeFormat add_yMMMEd() => addPattern('yMMMEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMMM() => addPattern('yMMMM');
+  PersianDateTimeFormat add_yMMMM() => addPattern('yMMMM');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMMMd() => addPattern('yMMMMd');
+  PersianDateTimeFormat add_yMMMMd() => addPattern('yMMMMd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yMMMMEEEEd() => addPattern('yMMMMEEEEd');
+  PersianDateTimeFormat add_yMMMMEEEEd() => addPattern('yMMMMEEEEd');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yQQQ() => addPattern('yQQQ');
+  PersianDateTimeFormat add_yQQQ() => addPattern('yQQQ');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_yQQQQ() => addPattern('yQQQQ');
+  PersianDateTimeFormat add_yQQQQ() => addPattern('yQQQQ');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_H() => addPattern('H');
+  PersianDateTimeFormat add_H() => addPattern('H');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_Hm() => addPattern('Hm');
+  PersianDateTimeFormat add_Hm() => addPattern('Hm');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_Hms() => addPattern('Hms');
+  PersianDateTimeFormat add_Hms() => addPattern('Hms');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_j() => addPattern('j');
+  PersianDateTimeFormat add_j() => addPattern('j');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_jm() => addPattern('jm');
+  PersianDateTimeFormat add_jm() => addPattern('jm');
 
   /// Add a predefined pattern to current [pattern] and returns new instance
-  PersianDateFormat add_jms() => addPattern('jms');
+  PersianDateTimeFormat add_jms() => addPattern('jms');
 
   /// Refreshes the tokenized pattern of the formatter.
   ///
@@ -381,7 +381,7 @@ class PersianDateFormat {
   /// ```
   ///
   /// Returns a new `PersianDateFormat` instance with the updated pattern.
-  PersianDateFormat refresh() => PersianDateFormat(pattern);
+  PersianDateTimeFormat refresh() => PersianDateTimeFormat(pattern);
 
   static String Function(JalaliDateTime) _getFormatterFor(String format) {
     return switch (format) {
@@ -395,24 +395,24 @@ class PersianDateFormat {
       'M' => (dt) => dt.month.toString(),
       'MM' => (dt) => dt.month.toString().padLeft(2, '0'),
       'dd' => (dt) => dt.day.toString().padLeft(2, '0'),
-      'Md' => const PersianDateFormat._(['M', '/', 'd']).format,
-      'MEd' => const PersianDateFormat._(['E', ', ', 'Md']).format,
-      'MMMd' => const PersianDateFormat._(['MMM', ' ', 'd']).format,
-      'MMMMd' => const PersianDateFormat._(['MMM', ' ', 'd']).format,
-      'MMMEd' => const PersianDateFormat._(['E', ', ', 'MMMd']).format,
-      'MMMMEEEEd' => const PersianDateFormat._(['E', ', ', 'MMMd']).format,
+      'Md' => const PersianDateTimeFormat._(['M', '/', 'd']).format,
+      'MEd' => const PersianDateTimeFormat._(['E', ', ', 'Md']).format,
+      'MMMd' => const PersianDateTimeFormat._(['MMM', ' ', 'd']).format,
+      'MMMMd' => const PersianDateTimeFormat._(['MMM', ' ', 'd']).format,
+      'MMMEd' => const PersianDateTimeFormat._(['E', ', ', 'MMMd']).format,
+      'MMMMEEEEd' => const PersianDateTimeFormat._(['E', ', ', 'MMMd']).format,
       'QQQ' => (dt) => 'فصل ${dt.month ~/ 4}',
-      'QQQQ' => const PersianDateFormat._(['QQQ']).format,
+      'QQQQ' => const PersianDateTimeFormat._(['QQQ']).format,
       'y' => (dt) => dt.year.toString(),
-      'yM' => const PersianDateFormat._(['y', '-', 'MM']).format,
-      'yMd' => const PersianDateFormat._(['y', '-', 'MM', '-', 'dd']).format,
-      'yMEd' => const PersianDateFormat._(['E', ', ', 'yMd']).format,
-      'yMMM' => const PersianDateFormat._(['y', '-', 'MMM']).format,
-      'yMMMd' => const PersianDateFormat._(['yMMM', '-', 'dd']).format,
-      'yMMMEd' => const PersianDateFormat._(['E', ', ', 'yMMMd']).format,
-      'yMMMM' => const PersianDateFormat._(['y', '-', 'MMMM']).format,
-      'yMMMMd' => const PersianDateFormat._(['yMMMM', '-', 'dd']).format,
-      'yMMMMEEEEd' => const PersianDateFormat._(['E', ', ', 'yMMMMd']).format,
+      'yM' => const PersianDateTimeFormat._(['y', '-', 'MM']).format,
+      'yMd' => const PersianDateTimeFormat._(['y', '-', 'MM', '-', 'dd']).format,
+      'yMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMd']).format,
+      'yMMM' => const PersianDateTimeFormat._(['y', '-', 'MMM']).format,
+      'yMMMd' => const PersianDateTimeFormat._(['yMMM', '-', 'dd']).format,
+      'yMMMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMd']).format,
+      'yMMMM' => const PersianDateTimeFormat._(['y', '-', 'MMMM']).format,
+      'yMMMMd' => const PersianDateTimeFormat._(['yMMMM', '-', 'dd']).format,
+      'yMMMMEEEEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMMd']).format,
       'H' => (dt) => DateFormat.H().format(dt.getDateTime()),
       'm' => (dt) => DateFormat.m().format(dt.getDateTime()),
       's' => (dt) => DateFormat.s().format(dt.getDateTime()),
