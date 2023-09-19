@@ -1,3 +1,7 @@
+## 1.1.2
+
+- (Fix) (Persian/Normal) DateTime formatter extensions
+
 ## 1.1.1
 
 ### Major
