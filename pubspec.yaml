@@ -1,6 +1,6 @@
 name: jalali_date_time
 description: JalaliDateTime is a Dart package that provides a convenient way to work with Jalali (Persian) dates while using the underlying DateTime structure.
-version: 1.1.0
+version: 1.1.1
 repository: https://github.com/fmotalleb/jalali_date_time_dart
 
 environment:
