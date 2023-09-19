@@ -1,3 +1,11 @@
+## 1.1.2
+
+- (Fix) (Persian/Normal) DateTime formatter extensions
+
+## 1.1.1
+
+- (Fix) Persian DateTime formatter bug
+
 ## 1.1.0
 
 - (Feat) Persian DateTime formatter
