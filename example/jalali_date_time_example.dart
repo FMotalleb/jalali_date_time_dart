@@ -11,7 +11,7 @@ void main() {
   final day = jalaliNow.day;
   print('today: $year-$month-$day'); // today: 1402-6-27
   // Convert JalaliDateTime to DateTime
-  final dateTime = jalaliNow.toDateTime();
+  final dateTime = jalaliNow.getDateTime();
 
   // Perform DateTime operations
   final tomorrow = dateTime.add(const Duration(days: 1));
@@ -29,5 +29,5 @@ void main() {
   }
   print(DateTime(1986, 4, 26, 01, 23, 40).toJalali()); // 1365-02-06 01:23:40 +0330
 
-  print(PersianFormatter.yMMMMEEEEd().format(jalaliTomorrow)); // سه‌شنبه, 1402-شهریور-28
+  print(PersianDateTimeFormat.yMMMMEEEEd().format(jalaliTomorrow)); // سه‌شنبه, 1402-شهریور-28
 }
