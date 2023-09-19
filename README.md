@@ -10,7 +10,7 @@ JalaliDateTime is a Dart package that provides a convenient way to work with Jal
 
 - **DateTime Compatibility**: Public apis for `JalaliDateTime` is almost identical to `DateTime`.
 
-- **Persian DateTime Format**: - **Persian DateTime Format**: Includes a built-in `PersianDateTimeFormat` almost identical to `DateTimeFormat` provided by `Intl`. You can find more information about the `intl` package [here](https://pub.dev/packages/intl).
+- **Persian DateTime Format**: Includes a built-in `PersianDateTimeFormat` almost identical to `DateTimeFormat` provided by `Intl`. You can find more information about the `intl` package [here](https://pub.dev/packages/intl).
 
 - **Efficient Design**: Each Jalali instance seamlessly holds its corresponding DateTime, minimizing overhead and computational load.
 
