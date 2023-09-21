@@ -49,10 +49,10 @@ import '../../jalali_date_time.dart';
 /// SECOND                       s
 
 /// {@template formatter}
-/// The [PersianDateTimeFormat] class is a utility class designed to format dates
-/// and times using the Persian (Jalali) calendar system. It provides various
-/// formatting options for date and time values, allowing you to customize how
-/// date and time information is displayed.
+/// The [PersianDateTimeFormat] class is a utility class designed to format
+/// dates and times using the Persian (Jalali) calendar system. It provides
+/// various formatting options for date and time values, allowing you to
+/// customize how date and time information is displayed.
 /// {@endtemplate}
 class PersianDateTimeFormat {
   /// By using this constructor, you can initialize the formatter with a raw
@@ -405,8 +405,7 @@ class PersianDateTimeFormat {
       'QQQQ' => const PersianDateTimeFormat._(['QQQ']).format,
       'y' => (dt) => dt.year.toString(),
       'yM' => const PersianDateTimeFormat._(['y', '-', 'MM']).format,
-      'yMd' =>
-        const PersianDateTimeFormat._(['y', '-', 'MM', '-', 'dd']).format,
+      'yMd' => const PersianDateTimeFormat._(['y', '-', 'MM', '-', 'dd']).format,
       'yMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMd']).format,
       'yMMM' => const PersianDateTimeFormat._(['y', '-', 'MMM']).format,
       'yMMMd' => const PersianDateTimeFormat._(['yMMM', '-', 'dd']).format,
