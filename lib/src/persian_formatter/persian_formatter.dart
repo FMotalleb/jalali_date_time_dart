@@ -381,7 +381,7 @@ class PersianDateTimeFormat {
   /// ```
   ///
   /// Returns a new `PersianDateFormat` instance with the updated pattern.
-  PersianDateTimeFormat refresh() => PersianDateTimeFormat(pattern);
+  // PersianDateTimeFormat refresh() => PersianDateTimeFormat(pattern);
 
   static String Function(JalaliDateTime) _getFormatterFor(String format) {
     return switch (format) {
@@ -413,8 +413,7 @@ class PersianDateTimeFormat {
       'yMMMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMd']).format,
       'yMMMM' => const PersianDateTimeFormat._(['y', '-', 'MMMM']).format,
       'yMMMMd' => const PersianDateTimeFormat._(['yMMMM', '-', 'dd']).format,
-      'yMMMMEEEEd' => //
-        const PersianDateTimeFormat._(['E', ', ', 'yMMMMd']).format,
+      'yMMMMEEEEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMMd']).format,
       'H' => (dt) => DateFormat.H().format(dt.getDateTime()),
       'm' => (dt) => DateFormat.m().format(dt.getDateTime()),
       's' => (dt) => DateFormat.s().format(dt.getDateTime()),

@@ -250,6 +250,6 @@ class GlobalDateInformation {
     return year.hashCode ^ //
         month.hashCode ^
         day.hashCode ^
-        dateType.hashCode << 50;
+        dateType.hashCode << 30;
   }
 }

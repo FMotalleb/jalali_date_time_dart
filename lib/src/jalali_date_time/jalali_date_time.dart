@@ -659,6 +659,6 @@ final class JalaliDateTime extends GlobalDateInformation //
 
   @override
   String toString() {
-    return PersianDateTimeFormat('yMd Hms $timeZoneName').format(this);
+    return toFormat('yMd Hms $timeZoneName');
   }
 }
