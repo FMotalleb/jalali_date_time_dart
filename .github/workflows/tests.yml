@@ -15,14 +15,11 @@ on:
 jobs:
   semantic_pull_request:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
-
   build:
     defaults:
       run:
         working-directory: "."
-
     runs-on: ubuntu-latest
-
     steps:
       - name: 📚 Git Checkout
         uses: actions/checkout@v4
@@ -45,7 +42,7 @@ jobs:
         run: |
           dart pub global activate coverage 1.2.0
           dart test -j 4 --coverage=coverage --platform=vm && dart pub global run coverage:format_coverage --lcov ${{(inputs.check_ignore && '--check-ignore') || ''}} --in=coverage --out=coverage/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
-
+          
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env: 
