@@ -405,7 +405,8 @@ class PersianDateTimeFormat {
       'QQQQ' => const PersianDateTimeFormat._(['QQQ']).format,
       'y' => (dt) => dt.year.toString(),
       'yM' => const PersianDateTimeFormat._(['y', '-', 'MM']).format,
-      'yMd' => const PersianDateTimeFormat._(['y', '-', 'MM', '-', 'dd']).format,
+      'yMd' => //
+        const PersianDateTimeFormat._(['y', '-', 'MM', '-', 'dd']).format,
       'yMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMd']).format,
       'yMMM' => const PersianDateTimeFormat._(['y', '-', 'MMM']).format,
       'yMMMd' => const PersianDateTimeFormat._(['yMMM', '-', 'dd']).format,
