@@ -28,12 +28,21 @@ void main() {
   if (jalaliTomorrow.isAfter(jalaliNow)) {
     print('Tomorrow is after today.'); // Tomorrow is after today.
   }
-  print(DateTime(1986, 4, 26, 01, 23, 40).toJalali()); // 1365-02-06 01:23:40 +0330
+  print(
+    DateTime(1986, 4, 26, 01, 23, 40).toJalali(),
+  ); // 1365-02-06 01:23:40 +0330
 
-  print(PersianDateTimeFormat.yMMMMEEEEd().format(jalaliTomorrow)); // سه‌شنبه, 1402-شهریور-28 (correct in rtl form)
-  print(jalaliTomorrow.toFormat('yMMMMEEEEd') == PersianDateTimeFormat.yMMMMEEEEd().format(jalaliTomorrow)); //true
+  print(
+    PersianDateTimeFormat.yMMMMEEEEd().format(jalaliTomorrow),
+  ); // سه‌شنبه, 1402-شهریور-28 (correct in rtl form)
+  print(
+    jalaliTomorrow.toFormat('yMMMMEEEEd') == //
+        PersianDateTimeFormat.yMMMMEEEEd().format(jalaliTomorrow),
+  ); //true
 
   print(tomorrow.toFormat('yMMMMEEEEd')); // Thursday, September 19, 2023
   // DateTime
-  print(tomorrow.toFormat('yMMMMEEEEd') == DateFormat.yMMMMEEEEd().format(tomorrow)); //true
+  print(
+    tomorrow.toFormat('yMMMMEEEEd') == DateFormat.yMMMMEEEEd().format(tomorrow),
+  ); //true
 }
