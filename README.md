@@ -3,21 +3,23 @@
 [![Publish to pub.dev](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/publish.yml/badge.svg)](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/publish.yml)
 [![Tests](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml/badge.svg)](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml)
 
+* only core features are tested
+
 JalaliDateTime is a Dart package that provides a convenient way to work with Jalali (Persian) dates while using the underlying DateTime structure for time-related methods. This approach is designed to maintain stability and efficiency in your code.
 
 ## Features
 
-- **Jalali Date Representation**: The package allows you to easily represent Jalali dates, including year, month, and day.
+* **Jalali Date Representation**: The package allows you to easily represent Jalali dates, including year, month, and day.
 
-- **DateTime Compatibility**: Public apis for `JalaliDateTime` is almost identical to `DateTime`.
+* **DateTime Compatibility**: Public apis for `JalaliDateTime` is almost identical to `DateTime`.
 
-- **Persian DateTime Format**: Includes a built-in `PersianDateTimeFormat` almost identical to `DateTimeFormat` provided by `Intl`. You can find more information about the `intl` package [here](https://pub.dev/packages/intl).
+* **Persian DateTime Format**: Includes a built-in `PersianDateTimeFormat` almost identical to `DateTimeFormat` provided by `Intl`. You can find more information about the `intl` package [here](https://pub.dev/packages/intl).
 
-- **Efficient Design**: Each Jalali instance seamlessly holds its corresponding DateTime, minimizing overhead and computational load.
+* **Efficient Design**: Each Jalali instance seamlessly holds its corresponding DateTime, minimizing overhead and computational load.
 
-- **Stability**: For time-related or computation methods such as comparison, subtraction, and more, JalaliDateTime utilizes the DateTime methods, ensuring reliability and accuracy.
+* **Stability**: For time-related or computation methods such as comparison, subtraction, and more, JalaliDateTime utilizes the DateTime methods, ensuring reliability and accuracy.
 
-- **Super Lightweight**: This package maintains a small footprint by relying on just two dependencies: intl and meta.
+* **Super Lightweight**: This package maintains a small footprint by relying on just two dependencies: intl and meta.
 
 ## Installation
 
