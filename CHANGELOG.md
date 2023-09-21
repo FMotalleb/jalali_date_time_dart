@@ -1,3 +1,7 @@
+## 1.1.3
+
+- (Tests) tests on JalaliDateTime + Core features
+
 ## 1.1.2
 
 - (Fix) (Persian/Normal) DateTime formatter extensions
