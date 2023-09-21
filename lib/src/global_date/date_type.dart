@@ -8,6 +8,7 @@ typedef DateBuilder = GlobalDateInformation Function(
   int day,
 );
 
+/// A function type that receives a [date] and results in a [bool]
 typedef ValidityCheck = bool Function(GlobalDateInformation date);
 
 /// A function type that maps a [GlobalDateInformation] instance to a different
