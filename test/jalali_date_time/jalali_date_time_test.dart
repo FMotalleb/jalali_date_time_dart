@@ -35,7 +35,8 @@ void main() {
           const intialMilis = 1695279952000;
           final ms = JalaliDateTime.fromMillisecondsSinceEpoch(intialMilis);
           expect(ms.millisecondsSinceEpoch, intialMilis);
-          final us = JalaliDateTime.fromMicrosecondsSinceEpoch(intialMilis * 1000);
+          final us = //
+              JalaliDateTime.fromMicrosecondsSinceEpoch(intialMilis * 1000);
           expect(us.microsecondsSinceEpoch, intialMilis * 1000);
 
           expect(JalaliDateTime(1400), const TypeMatcher<JalaliDateTime>());
