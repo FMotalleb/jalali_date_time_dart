@@ -1,4 +1,4 @@
-name: Tests And Merge
+name: Tests
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -54,9 +54,9 @@ jobs:
           path: ./coverage/lcov.info
           exclude: ${{inputs.coverage_excludes}}
           min_coverage: 70
-      - name: Merge Pull Request
-        uses: juliangruber/merge-pull-request-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: 1
-          method: merge
+    #   - name: Merge Pull Request
+    #     uses: juliangruber/merge-pull-request-action@v1
+    #     with:
+    #       github-token: ${{ secrets.GITHUB_TOKEN }}
+    #       number: 1
+    #       method: merge
