@@ -19,4 +19,7 @@ extension DateConverter on GlobalDateInformation {
         this,
         DateType.gregorian,
       );
+
+  /// checks if this instance is in correct bound
+  bool isValid() => dateType.validityTest(this);
 }

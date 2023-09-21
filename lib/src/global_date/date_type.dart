@@ -1,4 +1,4 @@
-import 'date_information.dart';
+import '../../jalali_date_time.dart';
 
 /// A function type that builds a [GlobalDateInformation] instance given year,
 /// month, and day values.
@@ -7,6 +7,8 @@ typedef DateBuilder = GlobalDateInformation Function(
   int month,
   int day,
 );
+
+typedef ValidityCheck = bool Function(GlobalDateInformation date);
 
 /// A function type that maps a [GlobalDateInformation] instance to a different
 /// [DateType].
@@ -22,18 +24,21 @@ enum DateType {
   jalali(
     builder: GlobalDateInformation.fromJalali,
     mapper: _jalaliMapper,
+    validityTest: _jalaliCheck,
   ),
 
   /// Represents the Gregorian calendar.
   gregorian(
     builder: GlobalDateInformation.fromGregorian,
     mapper: _gregorianMapper,
+    validityTest: _gregorianCheck,
   ),
   ;
 
   const DateType({
     required this.builder,
     required this.mapper,
+    required this.validityTest,
   });
 
   /// Create a [GlobalDateInformation] instance of this type with the given
@@ -42,6 +47,7 @@ enum DateType {
 
   /// Map a [GlobalDateInformation] instance of this type to a target type.
   final DateMapper mapper;
+  final ValidityCheck validityTest;
 }
 
 GlobalDateInformation _jalaliMapper(
@@ -71,3 +77,8 @@ GlobalDateInformation _gregorianMapper(
     DateType.gregorian => date,
   };
 }
+
+bool _gregorianCheck(GlobalDateInformation date) => //
+    date.toJalaliDate().toGregorianDate() == date;
+bool _jalaliCheck(GlobalDateInformation date) => //
+    date.toGregorianDate().toJalaliDate() == date;

@@ -2,7 +2,7 @@
 
 import 'package:meta/meta.dart';
 
-import 'date_type.dart';
+import '../../jalali_date_time.dart';
 
 /// Holds information of three integer values representing year, month, and day,
 /// along with an enum value of type [DateType] indicating the type of
@@ -42,13 +42,23 @@ class GlobalDateInformation {
     int year, [
     int month = 1,
     int day = 1,
-  ]) =>
-      GlobalDateInformation(
-        year: year,
-        month: month,
-        day: day,
-        dateType: DateType.jalali,
-      );
+  ]) {
+    assert(
+      month > 0 && month <= 12 && day > 0 && day <= 31,
+      'given values are out of bounds (month: 0<$month<=12, day: 0<$day<=31)',
+    );
+    final globalDateInformation = GlobalDateInformation(
+      year: year,
+      month: month,
+      day: day,
+      dateType: DateType.jalali,
+    );
+    assert(
+      globalDateInformation.isValid(),
+      'Given date is not correct (maybe b.c. of leap years)',
+    );
+    return globalDateInformation;
+  }
 
   /// Constructs a new [GlobalDateInformation] for the type [DateType.gregorian].
   ///
@@ -62,13 +72,23 @@ class GlobalDateInformation {
     int year, [
     int month = 1,
     int day = 1,
-  ]) =>
-      GlobalDateInformation(
-        year: year,
-        month: month,
-        day: day,
-        dateType: DateType.gregorian,
-      );
+  ]) {
+    assert(
+      month > 0 && month <= 12 && day > 0 && day <= 31,
+      'given values are out of bounds (month: 0<$month<=12, day: 0<$day<=31)',
+    );
+    final globalDateInformation = GlobalDateInformation(
+      year: year,
+      month: month,
+      day: day,
+      dateType: DateType.gregorian,
+    );
+    assert(
+      globalDateInformation.isValid(),
+      'Given date is not correct (maybe b.c. of leap years)',
+    );
+    return globalDateInformation;
+  }
 
   /// Constructs a new [GlobalDateInformation] from a [DateTime] object.
   ///
@@ -116,7 +136,12 @@ class GlobalDateInformation {
       jm = 7 + ((days - 186) ~/ 30);
       jd = (1 + ((days - 186) % 30)).toInt();
     }
-    return GlobalDateInformation.fromJalali(jy, jm, jd);
+    return GlobalDateInformation(
+      year: jy,
+      month: jm,
+      day: jd,
+      dateType: DateType.jalali,
+    );
   }
 
   /// Implementation of conversion from Jalali to Gregorian
@@ -173,7 +198,12 @@ class GlobalDateInformation {
     for (gm = 0; gm < 13 && gd > salA[gm]; gm++) {
       gd -= salA[gm];
     }
-    return GlobalDateInformation.fromGregorian(gy, gm, gd);
+    return GlobalDateInformation(
+      year: gy,
+      month: gm,
+      day: gd,
+      dateType: DateType.gregorian,
+    );
   }
 
   /// Represents the [year] value
@@ -200,5 +230,26 @@ class GlobalDateInformation {
       ..write(day.toString().padLeft(2, '0'))
       ..write(')');
     return buffer.toString();
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is GlobalDateInformation &&
+        other.year == year &&
+        other.month == month &&
+        other.day == day &&
+        other.dateType == dateType;
+  }
+
+  @override
+  int get hashCode {
+    return year.hashCode ^ //
+        month.hashCode ^
+        day.hashCode ^
+        dateType.hashCode << 50;
   }
 }
