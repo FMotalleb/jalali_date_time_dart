@@ -354,7 +354,7 @@ class PersianDateTimeFormat {
   ///
   /// **Unused due to change in the [addPattern] method!**
   ///
-  /// The [refresh] method updates the internal formatting pattern to match
+  /// The refresh method updates the internal formatting pattern to match
   /// the current state of the formatter. This is useful when you want to ensure
   /// that the formatter uses a specific pattern consistently, especially in
   /// performance-critical scenarios such as loops.
