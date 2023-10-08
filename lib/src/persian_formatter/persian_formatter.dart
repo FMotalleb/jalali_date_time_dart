@@ -200,7 +200,6 @@ class PersianDateTimeFormat {
     if (currentMatch.isEmpty) {
       final char = '${lastToken ?? ''}${pattern[0]}';
       final newFormat = pattern.replaceRange(0, 1, '');
-
       return _patternParser(newFormat, char);
     }
     final newFormat = pattern.replaceRange(0, currentMatch.length, '');
