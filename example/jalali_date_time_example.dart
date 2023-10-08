@@ -28,6 +28,8 @@ void main() {
   if (jalaliTomorrow.isAfter(jalaliNow)) {
     print('Tomorrow is after today.'); // Tomorrow is after today.
   }
+  print(DateFormat.H().addPattern('m', ':').format(DateTime.now()));
+  print(PersianDateTimeFormat.H().addPattern('m').format(JalaliDateTime.now()));
   print(
     DateTime(1986, 4, 26, 01, 23, 40).toJalali(),
   ); // 1365-02-06 01:23:40 +0330

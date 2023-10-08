@@ -213,8 +213,15 @@ class PersianDateTimeFormat {
 
   /// Adds new pattern after current pattern and returns new instance
   /// that has '[pattern]+[additionalPattern]' as its pattern
-  PersianDateTimeFormat addPattern(String additionalPattern) => //
-      PersianDateTimeFormat('$pattern$additionalPattern');
+  PersianDateTimeFormat addPattern(
+    String additionalPattern, [
+    String separator = ' ',
+  ]) => //
+      PersianDateTimeFormat._([
+        ...patternList,
+        if (separator.isNotEmpty) separator,
+        additionalPattern,
+      ]);
 
   /// Apply the format on [dateTime] and return result as string
   String format(JalaliDateTime dateTime) => //
