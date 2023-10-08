@@ -80,8 +80,14 @@ void main() {
         final formatter = i.value();
         expect(formatter.pattern, i.key);
       }
+      final format = PersianDateTimeFormat.MMMMEEEEd();
+      final format2 = PersianDateTimeFormat.yMMMMEEEEd();
       expect(
-        PersianDateTimeFormat.yMMMMEEEEd().format(JalaliDateTime.now()),
+        format.format(JalaliDateTime.now()),
+        const TypeMatcher<String>(),
+      );
+      expect(
+        format2.format(JalaliDateTime.now()),
         const TypeMatcher<String>(),
       );
     });
