@@ -505,5 +505,7 @@ class PersianDateTimeFormat {
   }
 
   @override
-  int get hashCode => _pattern.indexed.map((e) => e.hashCode).reduce((value, element) => value ^ element);
+  int get hashCode => _pattern.indexed //
+      .map((e) => e.hashCode)
+      .reduce((value, element) => value ^ element);
 }
