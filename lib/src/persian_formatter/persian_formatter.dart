@@ -422,7 +422,8 @@ class PersianDateTimeFormat {
       'yMMMEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMd']).format,
       'yMMMM' => const PersianDateTimeFormat._(['y', '-', 'MMMM']).format,
       'yMMMMd' => const PersianDateTimeFormat._(['yMMMM', '-', 'dd']).format,
-      'yMMMMEEEEd' => const PersianDateTimeFormat._(['E', ', ', 'yMMMMd']).format,
+      'yMMMMEEEEd' => //
+        const PersianDateTimeFormat._(['E', ', ', 'yMMMMd']).format,
       'H' => (dt) => DateFormat.H().format(dt.getDateTime()),
       'm' => (dt) => DateFormat.m().format(dt.getDateTime()),
       's' => (dt) => DateFormat.s().format(dt.getDateTime()),
@@ -504,5 +505,5 @@ class PersianDateTimeFormat {
   }
 
   @override
-  int get hashCode => _pattern.map((e) => e.hashCode).reduce((value, element) => value ^ element);
+  int get hashCode => _pattern.indexed.map((e) => e.hashCode).reduce((value, element) => value ^ element);
 }
