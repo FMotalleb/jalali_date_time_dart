@@ -80,14 +80,21 @@ void main() {
         final formatter = i.value();
         expect(formatter.pattern, i.key);
       }
+      expect(
+        PersianDateTimeFormat.yMMMMEEEEd().format(JalaliDateTime.now()),
+        const TypeMatcher<String>(),
+      );
     });
     test('Simple format', () {
       final dt = DateTime(1986, 04, 26, 1, 23, 40);
       final jDt = JalaliDateTime.fromDateTime(dt);
       final formatter = PersianDateTimeFormat.yMd();
       final formatter2 = PersianDateTimeFormat.yMd();
+      final formatter3 = PersianDateTimeFormat('y m d');
+      final formatter4 = PersianDateTimeFormat('y d m');
       expect(formatter2, formatter);
       expect(formatter.hashCode, formatter2.hashCode);
+      expect(formatter3.hashCode, isNot(formatter4.hashCode));
       expect(formatter(jDt), formatter.format(jDt));
       expect(formatter.format(jDt), '1365-02-06');
     });
