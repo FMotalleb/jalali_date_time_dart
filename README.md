@@ -2,6 +2,7 @@
 
 [![Publish to pub.dev](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/publish.yml/badge.svg)](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/publish.yml)
 [![Tests](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml/badge.svg)](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/FMotalleb/jalali_date_time_dart/graph/badge.svg?token=tRD8beEV0A)](https://codecov.io/gh/FMotalleb/jalali_date_time_dart)
 
 * only core features are tested
 
