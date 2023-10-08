@@ -47,13 +47,16 @@ jobs:
           uses: codecov/codecov-action@v3
           env: 
             CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-          
+        - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v3
+          env: 
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         - name: 📊 Check Code Coverage
           uses: VeryGoodOpenSource/very_good_coverage@v2
           with:
             path: ./coverage/lcov.info
             exclude: ${{inputs.coverage_excludes}}
-            min_coverage: 70
+            min_coverage: 100
       #   - name: Merge Pull Request
       #     uses: juliangruber/merge-pull-request-action@v1
       #     with:
