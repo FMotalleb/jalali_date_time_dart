@@ -1,7 +1,8 @@
 ## 1.3.0
 
 * (Minor) Fixed package version boundaries
-
+    > no public API change but the output of date formats that formerly used `-` in their output like `yM` is parsed as `y/m` (old: `y-m`)
+    >
 ## 1.2.0
 
 * (Minor) Fixed package version boundaries
