@@ -102,7 +102,7 @@ void main() {
       expect(formatter.hashCode, formatter2.hashCode);
       expect(formatter3.hashCode, isNot(formatter4.hashCode));
       expect(formatter(jDt), formatter.format(jDt));
-      expect(formatter.format(jDt), '1365-02-06');
+      expect(formatter.format(jDt), '1365/02/06');
     });
   });
 }
