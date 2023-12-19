@@ -1,3 +1,7 @@
+## 1.2.0
+
+* (Minor) Fixed package version boundaries
+
 ## 1.1.5
 
 * (Minor) Bump package versions
