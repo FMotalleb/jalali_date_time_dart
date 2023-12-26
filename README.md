@@ -4,8 +4,6 @@
 [![Tests](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml/badge.svg)](https://github.com/FMotalleb/jalali_date_time_dart/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/FMotalleb/jalali_date_time_dart/graph/badge.svg?token=tRD8beEV0A)](https://codecov.io/gh/FMotalleb/jalali_date_time_dart)
 
-* only core features are tested
-
 JalaliDateTime is a Dart package that provides a convenient way to work with Jalali (Persian) dates while using the underlying DateTime structure for time-related methods. This approach is designed to maintain stability and efficiency in your code.
 
 ## Features
